@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>表单提交</title>
+</head>
+<body>
+    {% if show_result %}
+        <!-- 结果显示区域 -->
+        <h2>提交结果</h2>
+        <p>请求方法：{{ method }}</p>
+        <p>表单数据：</p>
+        <ul>
+            <li>用户名：{{ username }}</li>
+            <li>密码：{{ password }}</li>
+        </ul>
+        <a href="/">返回表单</a>
+    {% else %}
+        <!-- 表单输入区域 -->
+        <h2>提交表单</h2>
+        <form action="/" method="post">
+            用户名：<input type="text" name="username" required><br><br>
+            密码：<input type="password" name="password" required><br><br>
+            <input type="submit" value="提交">
+        </form>
+    {% endif %}
+</body>
+</html>
